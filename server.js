@@ -22,6 +22,10 @@ app.use(bodyParser.json());
 const profileRouter = require('./api/routes/profile');
 app.use('/api/profile', profileRouter);
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+}
+
 // Start server
 const PORT = process.env.PORT || 8081
 app.listen(PORT, () => {

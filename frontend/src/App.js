@@ -16,7 +16,7 @@ function App() {
   const [profileList, setProfileList] = useState([]);
 
   const getProfiles = () => {
-    Axios.get("http://localhost:8081/api/profile").then((res) => {
+    Axios.get("/api/profile").then((res) => {
       setProfileList(res.data);
     })
   }
@@ -24,7 +24,7 @@ function App() {
   const addProfile = () => {
     let sportsList = [];
     sports.forEach(sport => {sportsList.push({name: sport})})
-    Axios.post("http://localhost:8081/api/profile", {
+    Axios.post("/api/profile", {
       name: name,
       dob: dob,
       team: team,
