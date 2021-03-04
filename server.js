@@ -23,7 +23,7 @@ const profileRouter = require('./api/routes/profile');
 app.use('/api/profile', profileRouter);
 
 // Start server
-const PORT = 8081
+const PORT = process.env.PORT || 8081
 app.listen(PORT, () => {
     console.log("Server running on port %s", PORT);
 });
